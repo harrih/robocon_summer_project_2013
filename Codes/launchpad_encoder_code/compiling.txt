@@ -1,0 +1,6 @@
+msp430-gcc -mmcu=msp430g2553 -O2 -Wall -c -o main.o main.c
+msp430-gcc -mmcu=msp430g2553 -o main.elf main.o
+mspdebug rf2500
+> erase
+> prog main.elf
+> exit

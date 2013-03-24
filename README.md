@@ -11,12 +11,6 @@ Microcontrollers - files for various microcontrollers
 
 Codes - Miscellaneous Codes
 
+Sensors - Files regarding various sensors
 
-
-
-To bo started :
-
-Trackball - all files regarding trackball
-
-Compass - all files regarding all types of compass and IMUs
 

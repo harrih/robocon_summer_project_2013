@@ -1,0 +1,5 @@
+gcc -Wall -g main.c -o main `pkg-config --cflags gtk+-2.0` `pkg-config --libs gtk+-2.0`
+
+
+
+`wx-config --cxxflags` `wx-config --libs`
