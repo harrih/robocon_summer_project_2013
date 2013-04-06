@@ -14,7 +14,7 @@
 #include <stdio.h>
 #include <iostream>
 #define TRUE 1
-#define FALSE 1
+#define FALSE 0
 
 //#include "epos_properties.h"
 

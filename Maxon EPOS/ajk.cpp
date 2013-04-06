@@ -1,3 +1,6 @@
+// compile : 
+
+
 # include <iostream>
 # include <cstring>
 # include <definitions.h>
