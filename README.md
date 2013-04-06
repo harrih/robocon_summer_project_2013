@@ -13,6 +13,8 @@ Codes - Miscellaneous Codes
 
 Sensors - Files regarding various sensors
 
-Processor- files concerned with the processor project 
+Processor- files concerned with the processor project
+
+ICs- info about the ICs we will be using. Power and logical components. 
 
 
