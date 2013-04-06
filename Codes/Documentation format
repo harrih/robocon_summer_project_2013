@@ -1,0 +1,79 @@
+
+  THOUGH THE DOCUMENTATION AND APPLICATION NOTES OF ALMOST ALL ICS/DEVICES/PROTOCOLS ARE AVAILABLE ; WE ARE MAKING DOCUMENTATION/APP NOTES AGAIN BECAUSE 
+
+			IT ENHANCES YOUR KNOWLEDGE ABOUT THE IC/DEVICE/PROTOCOL AND MAKES IT COMPLETE
+
+			SIMPLE TO UNDERSTAND - MAKE IT AS SIMPLE AS POSSIBLE SO THAT OTHER TEAM MEMBERS DONT WASTE MUCH TIME.
+
+
+title : name of ic - ic number
+
+abstract:
+give a 1 description of what this ic does. you can also give a simple example.
+
+Pin diagram:
+copy the image from the net - should have all the pins labelled
+
+Pin connections :
+explain each pin [ very simple terms ]
+	in case of pins like vcc or vss mention which device or source provides this as well as the voltage level
+
+*sample circuit:
+make a block diagram of the the subsystem with all the connections to the ic or device.
+
+	make provision for resistor/capacitor[with the value] or any other small component also.
+
+*remarks:
+in case of poer components like transistor u can put the calculations for choosing resistors
+
+u can mention the max current ratings
+
+u can mentions any warnings or some debugging issue that u might have faced.
+
+
+
+
+1. max 232
+2. opto
+3. transistor
+4. mosfet
+5. decoder ic
+6. counter ic
+7. mux
+
+
+
+
+
+
+
+		DOCUMENTATION FOR COMMUNICATION PROTOCOLS 
+
+TITLE: name of the protocol
+
+ABSTRACT: 1 line description of the type of protocol. And in this specific case mention the devices/sensor used.
+
+SEQUENCE OF COMM: mention master and slave devices. and the sequence of communication[which device sends data and when does the other device receive etc].
+
+FRAME STRUCTURE: give the basic frame structure - total number os bits and their splitup.
+				if the protocol requires deep understanding - mention start/stop/parity bits etc. and explain them else
+										give details about only important bits/bytes.
+
+VOLTAGE LEVELS: clearly mention input and output voltage levels,threshold levels, logic levels also.
+
+*REAMRKS:
+1. cable connections in case specific cables are required.
+2. cable length 
+3. any comments on the protocol and generally used area.
+
+1. rs232
+2. i2c
+3. twi
+4. can
+5. usb
+
+
+
+
+* - can be skipped if deemed unecessary
+
