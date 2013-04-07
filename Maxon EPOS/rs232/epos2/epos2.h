@@ -45,7 +45,11 @@ public:
 	uint32_t get_device_type();
 	uint16_t get_device_version();
 	uint16_t get_rs232_timeout();
+/*
+	int set_rs232_timeout();
 	
+	
+*/
 };
 
 epos2_frame get_frame(unsigned short o, unsigned short l, unsigned int d0, unsigned int d1, unsigned int d2, unsigned int d3);
