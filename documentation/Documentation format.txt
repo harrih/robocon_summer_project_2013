@@ -24,11 +24,11 @@ make a block diagram of the the subsystem with all the connections to the ic or 
 	make provision for resistor/capacitor[with the value] or any other small component also.
 
 *remarks:
-in case of poer components like transistor u can put the calculations for choosing resistors
+in case of power components like transistor u can put the calculations for choosing resistors
 
 u can mention the max current ratings
 
-u can mentions any warnings or some debugging issue that u might have faced.
+u can mention any warnings or some debugging issue that u might have faced.
 
 
 
@@ -40,6 +40,7 @@ u can mentions any warnings or some debugging issue that u might have faced.
 5. decoder ic
 6. counter ic
 7. mux
+8. CAN transceiver
 
 
 
