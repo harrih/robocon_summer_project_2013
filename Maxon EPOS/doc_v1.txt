@@ -1,0 +1,63 @@
+Maxon EPOS2 Documentation :
+
+Communications :
+The maxons use 3 types of communication : USB, RS232 and CANOpen
+
+CAN
+	CAN Open is used by various arm microcontrollers, and arduino due 
+has 2 can ports. Due to the lack of a good CANOpen library with complete 
+functionalities, we didn't use CAN. The CAN pins in Arduino DUE are 
+only CAN controllers. An external Transceiver is required for converting
+the Serial pins to a Bus. We used the IC MCP2551.
+
+USB
+	In Windows, EPOS Studio is provided by Maxon itself. It can be used
+to control the EPOS2 in every way possible.
+	In Linux, libEposCmd is provided, a library which contains most of
+the functions required to control EPOS2. There is also an example GUI
+based program given by them which can be used to control the EPOS2. But,
+we found that it isn't nearly as reliable or well built as EPOSStudio.
+	We used EPOSStudio to test mxons first and do diagnostic tests on
+them. But as Windows wasn't suitable to be used on the bot, we tried 
+the linux library (hoping we could use an atom processor sometime). So,
+it turned out to be okay, but not very good. As in, sometimes randomly
+it would stop, give errors, etc. We never debugged them completely, as
+using Linux(x86) on our bot was ultimately a far way off.
+
+RS232
+	RS232 was simple and cleaner. The frames had proper explanation, and
+as we are very familiar with Serial (USART) comm in Arduino, it was very
+easy for us to get accustomed to it. We began, and made the standard
+RS232 circuit and tested it out. Finally, it worked (we faced some 
+issues in baud rate and the circuit itself). And we tested out the frame
+they had given. It wasn't too difficult, and we pretty much immediately
+got results! Continuing, we got more frames working for reading and 
+writing, and it worked pretty well. There were some minor bugs and
+but it shaped up pretty well.
+	Frame :
+	+------+    +-------+ +----------+----------+   +----------+ +---+
+	|Opcode| OK |len - 1| |data 0 LSB|data 0 MSB|...|data 3 MSB| |CRC| OK
+	+------+    +-------+ +----------+----------+   +----------+ +---+
+	That is the general frame that is most commonly used. As of yet, we
+couldn't get Segmented Write/Read working with RS232.
+
+
+RS232 EPOS2 Library :
+	The Epos2 Library we wrote is as generalized as we could make it. 
+It is a simple implementation of all the objects in the object dictionary
+that EPOS2 had to offer us. It is broadly divided into communication
+functions, general device constants, device configs, position configs,
+velocity configs, acceleration configs, and Interpolated Position mode
+currently has it's own section too, but it doesn't work (as it requires 
+segmented write). If this needs to be moved to another platform, only 
+the communication functions need to be changed. Everything else doesn't
+need to be changed. 
+There is a debug functionality (which will only work in arduino, where
+you need to uncomment one line on the top of the .cpp file to get 
+extensive information about what is happening.
+A new set of functions called "Nice functions" are currently being 
+developed for easy use of all features. It is recommended not to use 
+this, rather make functions in your own arduino code to do what you want.
+Already the RS232 is pretty slow, and these "nice" functions do
+a lot of stuff which may be unnecessary for particular projects, and 
+hence reduce speed drastically.

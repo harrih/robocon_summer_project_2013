@@ -1,0 +1,134 @@
+# ifndef EPOS2_OBJECTS_V2_H
+# define EPOS2_OBJECTS_V2_H
+
+//--------------------------------------------------------------------
+// OBJECT EPOS2 OPCODES
+//--------------------------------------------------------------------
+# define READ_OPCODE 0x10
+# define INIT_SEGMENT_READ_OPCODE 0x12
+# define SEGMENT_READ_OPCODE 0x14
+# define WRITE_OPCODE 0x11
+# define INIT_SEGMENT_WRITE_OPCODE 0x13
+# define SEGMENT_WRITE_OPCODE 0x15
+
+//--------------------------------------------------------------------
+// OBJECT EPOS2 FRAMES and TYPES
+//--------------------------------------------------------------------
+// Template :
+// typedef TYPE NAME_FOR_TYPE
+// # define NAME_OBJ no_of_bytes, index, sub_index
+
+// GENERAL OBJECTS
+typedef uint32_t INT_DEVICE_TYPE;
+# define DEVICE_TYPE 4, 0x1000, 0x00
+typedef uint8_t INT_ERROR_REGISTER;
+# define ERROR_REGISTER 1, 0x1001, 0x00
+typedef uint8_t INT_NODE_ID;
+# define NODE_ID 1, 0x2000, 0x00
+typedef uint16_t INT_SOFTWARE_VERSION;
+# define SOFTWARE_VERSION 2, 0x2003, 0x01
+typedef uint16_t INT_HARDWARE_VERSION;
+# define HARDWARE_VERSION 2, 0x2003, 0x02
+typedef uint16_t INT_APPLICATION_NUMBER;
+# define APPLICATION_NUMBER 2, 0x2003, 0x03
+typedef uint16_t INT_APPLICATION_VERSION;
+# define APPLICATION_VERSION 2, 0x2003, 0x04
+typedef uint32_t INT_SUPPORTED_MOTOR_DRIVES;
+# define SUPPORTED_MOTOR_DRIVES 4, 0x6502, 0x00
+
+// SETTING/WORDS/CONFIG OBJECTS
+typedef uint16_t INT_CAN_BITRATE;
+# define CAN_BITRATE 2, 0x2001, 0x00
+typedef uint16_t INT_RS232_BAUDRATE;
+# define RS232_BITRATE 2, 0x2002, 0x00
+typedef uint16_t INT_RS232_FRAME_TIMEOUT;
+# define RS232_FRAME_TIMEOUT 2, 0x2005, 0x00
+typedef uint16_t INT_USB_FRAME_TIMEOUT;
+# define USB_FRAME_TIMEOUT 2, 0x2005, 0x00
+typedef uint16_t INT_MISC_CONFIG;
+# define MISC_CONFIG 2, 0x2008, 0x00
+typedef int32_t INT_GEAR_RATIO_NUMERATOR;
+# define GEAR_RATIO_NUMERATOR 4, 0x2230, 0x01
+typedef int16_t INT_GEAR_RATIO_DENOMINATOR;
+# define GEAR_RATIO_DENOMINATOR 2, 0x2230, 0x02
+typedef int32_t INT_GEAR_MAXIMAL_SPEED;
+# define GEAR_MAXIMAL_SPEED 4, 0x2230, 0x03
+typedef uint16_t INT_CONTROLWORD;
+# define CONTROLWORD 2, 0x6040, 0x00
+typedef uint16_t INT_STATUSWORD;
+# define STATUSWORD 2, 0x6041, 0x00
+typedef uint8_t INT_MODES_OF_OPERATION;
+# define MODES_OF_OPERATION 1, 0x6060, 0x00
+typedef uint8_t INT_MODES_OF_OPERATION_DISPLAY;
+# define MODES_OF_OPERATION_DISPLAY 2, 0x6041, 0x00
+typedef uint16_t INT_MOTOR_TYPE;
+# define MOTOR_TYPE 2, 0x6402, 0x00
+
+// CURRENT OBJECTS
+typedef int16_t INT_CURRENT_MODE_SETTING_VALUE;
+# define CURRENT_MODE_SETTING_VALUE 2, 0x2030, 0x00
+typedef int16_t INT_CURRENT_DEMAND_VALUE;
+# define CURRENT_DEMAND_VALUE 2, 0x2031, 0x00
+typedef int16_t INT_CURRENT_ACTUAL_VALUE;
+# define CURRENT_ACTUAL_VALUE 2, 0x6078, 0x00
+
+// POSITION OBJECTS
+typedef int32_t INT_POSITION_MODE_SETTING_VALUE;
+# define POSITION_MODE_SETTING_VALUE 4, 0x2031, 0x00
+typedef int32_t INT_POSITION_DEMAND_VALUE;
+# define POSITION_DEMAND_VALUE 4, 0x6062, 0x00
+typedef int32_t INT_POSITION_ACTUAL_VALUE;
+# define POSITION_ACTUAL_VALUE 4, 0x6064, 0x00
+typedef int16_t INT_FOLLOWING_ERROR_ACTUAL_VALUE;
+# define FOLLOWING_ERROR_ACTUAL_VALUE 2, 0x20F4, 0x00
+typedef uint32_t INT_MAXIMAL_FOLLOWING_ERROR;
+# define MAXIMAL_FOLLOWING_ERROR 4, 0x6065, 0x00
+typedef int32_t INT_POSITION_WINDOW;
+# define POSITION_WINDOW 4, 0x6067, 0x00
+typedef uint16_t INT_POSITION_WINDOW_TIME;
+# define POSITION_WINDOW_TIME 2, 0x6068, 0x00
+typedef int32_t INT_TARGET_POSITION;
+# define TARGET_POSITION 4, 0x607A, 0x00
+typedef uint32_t INT_MINIMAL_POSITION_LIMIT;
+# define MINIMAL_POSITION_LIMIT 4, 0x607D, 0x01
+typedef uint32_t INT_MAXIMAL_POSITION_LIMIT;
+# define MAXIMAL_POSITION_LIMIT 4, 0x607D, 0x02
+typedef int16_t INT_MOTION_PROFILE_TYPE;
+# define MOTION_PROFILE_TYPE 2, 0x6086, 0x02
+
+// VELOCITY OBJECTS
+typedef int32_t INT_VELOCITY_MODE_SETTING_VALUE;
+# define VELOCITY_MODE_SETTING_VALUE 4, 0x2031, 0x00
+typedef int32_t INT_VELOCITY_DEMAND_VALUE;
+# define VELOCITY_DEMAND_VALUE 4, 0x606B, 0x00
+typedef int32_t INT_VELOCITY_ACTUAL_VALUE;
+# define VELOCITY_ACTUAL_VALUE 4, 0x606C, 0x00
+typedef uint32_t INT_VELOCITY_WINDOW;
+# define VELOCITY_WINDOW 4, 0x606D, 0x00
+typedef uint16_t INT_VELOCITY_WINDOW_TIME;
+# define VELOCITY_WINDOW_TIME 2, 0x606E, 0x00
+typedef uint32_t INT_MAXIMAL_PROFILE_VELOCITY;
+# define MAXIMAL_PROFILE_VELOCITY 4, 0x607F, 0x00
+typedef uint32_t INT_PROFILE_VELOCITY;
+# define PROFILE_VELOCITY 4, 0x6081, 0x00
+typedef int32_t INT_TARGET_VELOCITY;
+# define TARGET_VELOCITY 4, 0x60FF, 0x00
+
+// ACCELERATION OBJECTS
+typedef uint32_t INT_PROFILE_ACCELERATION;
+# define PROFILE_ACCELERATION 4, 0x6083, 0x00
+typedef uint32_t INT_PROFILE_DECELERATION;
+# define PROFILE_DECELERATION 4, 0x6084, 0x00
+typedef uint32_t INT_QUICKSTOP_DECELERATION;
+# define QUICKSTOP_DECELERATION 4, 0x6085, 0x00
+typedef uint32_t INT_MAX_ACCELERATION;
+# define MAX_ACCELERATION 4, 0x60C5, 0x00
+
+
+//--------------------------------------------------------------------
+// EPOS2 - extra data types
+//--------------------------------------------------------------------
+typedef uint32_t INT_ERROR;
+
+
+# endif
